@@ -7,7 +7,37 @@ const pane = new Pane({
     expanded: true
 });
 
-pane.addBlade({
+const paneTab = pane.addTab({
+    pages: [
+        { title: 'Settings' },
+        { title: 'About' },
+    ]
+});
+
+paneTab.pages[1].addBlade({
+    view: 'text',
+    label: 'Author',
+    value: 'Vadym Tytan',
+    parse: (v) => String(v),
+    readonly: true
+}).controller.valueController.view.inputElement.readOnly = true;
+
+paneTab.pages[1].addBlade({
+    view: 'text',
+    label: 'License',
+    value: 'MIT License',
+    parse: (v) => String(v),
+    readonly: true
+}).controller.valueController.view.inputElement.readOnly = true;
+
+paneTab.pages[1].addButton({
+    label: 'Source Code',
+    title: 'GitHub',
+}).on('click', () => {
+    window.open('https://github.com/playday3008/CelluAuto');
+});
+
+paneTab.pages[0].addBlade({
     view: 'list',
     label: 'Rules',
     options: [
@@ -25,9 +55,9 @@ pane.addBlade({
     g_once = true;
 });
 
-pane.addBlade({ view: 'separator' });
+paneTab.pages[0].addBlade({ view: 'separator' });
 
-pane.addBinding(g_options, 'stepFrames', {
+paneTab.pages[0].addBinding(g_options, 'stepFrames', {
     label: 'Speed of simulation',
     min: 0,
     max: 1,
@@ -36,8 +66,7 @@ pane.addBinding(g_options, 'stepFrames', {
     g_options.invStepFrames = Math.floor(1 / g_options.stepFrames);
 });
 
-var cellSizeWarning = false;
-pane.addBinding(g_options, 'cellSize', {
+paneTab.pages[0].addBinding(g_options, 'cellSize', {
     label: 'Cell size',
     min: 5,
     max: 50,
@@ -46,15 +75,15 @@ pane.addBinding(g_options, 'cellSize', {
     g_once = true;
 });
 
-pane.addButton({
+paneTab.pages[0].addButton({
     title: 'Reload',
 }).on('click', () => {
     g_once = true;
 });
 
-pane.addBlade({ view: 'separator' });
+paneTab.pages[0].addBlade({ view: 'separator' });
 
-const statPane = pane.addFolder({
+const statPane = paneTab.pages[0].addFolder({
     title: 'Statistics',
     expanded: true
 });
