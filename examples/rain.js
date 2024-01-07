@@ -55,7 +55,7 @@ function initRainWorld(options) {
     ], grid);
 
     world.cellTypes = [
-        CACellWater,
+        CACellRock,
         CACellAir
     ]
 
