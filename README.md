@@ -2,6 +2,10 @@
 
 CelluAuto is a demo project for creating cellular automata simulations in JavaScipt.
 
+## Live Demo
+
+[https://playday3008.github.io/CelluAuto/](https://playday3008.github.io/CelluAuto/)
+
 ## Libraries used
 
 - [PixiJS](https://www.pixijs.com/) for rendering
@@ -10,4 +14,3 @@ CelluAuto is a demo project for creating cellular automata simulations in JavaSc
 ## Thanks
 
 - [Jonas Olmstead](https://github.com/sanojian) for the inspiration and [base code](https://github.com/sanojian/cellauto) for this project.
-- [Riley J. Shaw](https://rileyjshaw.com) for rules implementation and [terra.js](https://rileyjshaw.com/terra/).
