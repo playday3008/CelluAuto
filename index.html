@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cellular Automata</title>
+
+    <!-- Load core Logic -->
+    <script src="./src/CACell.js"></script>
+    <script src="./src/CAWorld.js"></script>
+
+    <!-- Load rules -->
+    <script src="./examples/caves.js"></script>
+    <script src="./examples/cavesWithWater.js"></script>
+    <script src="./examples/cyclic.js"></script>
+    <script src="./examples/forestFire.js"></script>
+    <script src="./examples/gameOfLife.js"></script>
+    <script src="./examples/maze.js"></script>
+    <script src="./examples/rain.js"></script>
+
+    <!-- Global Constants -->
+    <script>
+        var g_nextWorld = initCavesWithWaterWorld;
+        var g_once = true;
+        var g_options = {
+            stepFrames: 1,
+            invStepFrames: 1,
+            cellSize: 25
+        }
+        var g_stats = {
+            fps: 0,
+            timeStart: 0,
+            timeElapsed: 0,
+            cellCount: 0
+        };
+    </script>
+
+    <!-- Main Loop and Logic -->
+    <script type="module" src="./src/index.js"></script>
+
+    <!-- CSS -->
+    <style>
+        /* Tweakpane CSS */
+        :root {
+            --tp-base-background-color: hsla(0, 0%, 10%, 0.8);
+            --tp-base-shadow-color: hsla(0, 0%, 0%, 0.2);
+            --tp-button-background-color: hsla(0, 0%, 80%, 1);
+            --tp-button-background-color-active: hsla(0, 0%, 100%, 1);
+            --tp-button-background-color-focus: hsla(0, 0%, 95%, 1);
+            --tp-button-background-color-hover: hsla(0, 0%, 85%, 1);
+            --tp-button-foreground-color: hsla(0, 0%, 0%, 0.8);
+            --tp-container-background-color: hsla(0, 0%, 0%, 0.3);
+            --tp-container-background-color-active: hsla(0, 0%, 0%, 0.6);
+            --tp-container-background-color-focus: hsla(0, 0%, 0%, 0.5);
+            --tp-container-background-color-hover: hsla(0, 0%, 0%, 0.4);
+            --tp-container-foreground-color: hsla(0, 0%, 100%, 0.5);
+            --tp-groove-foreground-color: hsla(0, 0%, 0%, 0.2);
+            --tp-input-background-color: hsla(0, 0%, 0%, 0.3);
+            --tp-input-background-color-active: hsla(0, 0%, 0%, 0.6);
+            --tp-input-background-color-focus: hsla(0, 0%, 0%, 0.5);
+            --tp-input-background-color-hover: hsla(0, 0%, 0%, 0.4);
+            --tp-input-foreground-color: hsla(0, 0%, 100%, 0.5);
+            --tp-label-foreground-color: hsla(0, 0%, 100%, 0.5);
+            --tp-monitor-background-color: hsla(0, 0%, 0%, 0.3);
+            --tp-monitor-foreground-color: hsla(0, 0%, 100%, 0.3);
+        }
+
+        /* Global CSS */
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #canvas-container {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #my-canvas {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas-container">
+        <canvas id="my-canvas"></canvas>
+    </div>
+
+    <!-- Tweakpane: for easy tweaking of parameters -->
+    <script type="module" src="./src/settings.js"></script>
+</body>
+
+</html>
