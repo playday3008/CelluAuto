@@ -66,7 +66,7 @@ function initForestFireWorld(options) {
 
     world.cellTypes = [
         CACellTree
-    ]
+    ];
 
     return world;
 };

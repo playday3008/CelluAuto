@@ -38,7 +38,7 @@ function initGameOfLifeWorld(options) {
 
     world.cellTypes = [
         CACellLiving
-    ]
+    ];
 
     return world;
 };

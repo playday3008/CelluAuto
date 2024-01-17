@@ -57,7 +57,7 @@ function initRainWorld(options) {
     world.cellTypes = [
         CACellAir,
         CACellRock
-    ]
+    ];
 
     return world;
 };

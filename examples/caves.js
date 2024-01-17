@@ -38,7 +38,7 @@ function initCavesWorld(options) {
 
     world.cellTypes = [
         CACellWall
-    ]
+    ];
 
     return world;
 };

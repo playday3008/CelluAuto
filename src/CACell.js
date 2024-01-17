@@ -35,7 +35,7 @@ class CACell {
         console.warn('CACell.getPalette() not implemented');
         debugger;
         return [];
-    }
+    };
 
     // Returns a count of members of the given cell array that contain the given propery.
     countSurroundingCellsWithValue(neighbors, value) {

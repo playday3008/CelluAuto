@@ -124,7 +124,7 @@ function initCavesWithWaterWorld(options) {
     world.cellTypes = [
         CACellWater,
         CACellRock
-    ]
+    ];
 
     return world;
 };

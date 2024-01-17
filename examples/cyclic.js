@@ -44,7 +44,7 @@ function initCyclicWorld(options) {
 
     world.cellTypes = [
         CACellCyclic
-    ]
+    ];
 
     return world;
 };

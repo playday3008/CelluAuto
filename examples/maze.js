@@ -30,7 +30,7 @@ function initMazeWorld(options) {
 
     world.cellTypes = [
         CACellMaze
-    ]
+    ];
 
     return world;
 };
